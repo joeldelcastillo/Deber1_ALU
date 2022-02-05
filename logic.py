@@ -185,7 +185,5 @@ def testFull(a, b, c):
     print("Cin={0}  A={1}  B={2}".format(c, a, b))
     print("Sum={0}  Cout={1}".format(F1.S.value, F1.Cout.value))
 
-
-
 if __name__ == "__main__":
     test4Bit("1111", "1111")
