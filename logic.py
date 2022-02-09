@@ -27,10 +27,10 @@ class Connector:
         self.value = value
         if self.activates:
             self.owner.evaluate()
-        if self.monitor:
-            print("Connector {0}-{1} set to {2}".format(self.owner.name,
-                                                        self.name,
-                                                        self.value))
+        # if self.monitor:
+        #     print("Connector {0}-{1} set to {2}".format(self.owner.name,
+        #                                                 self.name,
+        #                                                 self.value))
         for con in self.connects:
             con.set(value)
 
@@ -132,23 +132,6 @@ class FullAdder(LC):         # One bit adder, A,B,Cin in. Sum and Cout out
         self.O1.C.connect([self.Cout])
 
 
-def ZeroChecker(LC):
-    def __init__(self, name):
-        LC.__init__(self, name)
-        self.A = Connector(self, 'A', 1, monitor=1)
-        self.B = Connector(self, 'B', 1, monitor=1)
-        self.C = Connector(self, 'C', 1, monitor=1)
-        self.D = Connector(self, 'D', 1, monitor=1)
-
-        self.E = Connector(self, 'E', 1, monitor=1)
-        self.F = Connector(self, 'F', 1, monitor=1)
-
-        self.G = Connector(self, 'G', 1, monitor=1)
-
-        self.S = Connector(self, 'S')
-        self.C = Connector(self, 'C')
-
-
 def bit(x, bit):
     return x[bit] == '1'
 
@@ -184,8 +167,3 @@ def testFull(a, b, c):
 
     print("Cin={0}  A={1}  B={2}".format(c, a, b))
     print("Sum={0}  Cout={1}".format(F1.S.value, F1.Cout.value))
-
-
-
-if __name__ == "__main__":
-    test4Bit("1111", "1111")
