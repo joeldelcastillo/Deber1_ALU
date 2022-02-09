@@ -27,10 +27,10 @@ class Connector:
         self.value = value
         if self.activates:
             self.owner.evaluate()
-        if self.monitor:
-            print("Connector {0}-{1} set to {2}".format(self.owner.name,
-                                                        self.name,
-                                                        self.value))
+        # if self.monitor:
+        #     print("Connector {0}-{1} set to {2}".format(self.owner.name,
+        #                                                 self.name,
+        #                                                 self.value))
         for con in self.connects:
             con.set(value)
 
