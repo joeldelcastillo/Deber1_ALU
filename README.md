@@ -1,2 +1,3 @@
 # Computer Organization
-Repositorio de la clase de Organización de Computadores.
+
+Repositorio del deber #1 de la clase de Organización de Computadores.
